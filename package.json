@@ -1,0 +1,30 @@
+{
+  "name": "cdn-webpack-plugin",
+  "version": "1.0.0",
+  "description": "a high availability cdn plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
+  "keywords": [],
+  "author": "console.logman@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^4.0.4",
+    "node-sass": "^4.13.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
