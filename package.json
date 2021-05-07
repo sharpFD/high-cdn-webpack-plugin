@@ -1,6 +1,6 @@
 {
   "name": "high-cdn-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a high availability cdn plugin",
   "main": "index.js",
   "scripts": {

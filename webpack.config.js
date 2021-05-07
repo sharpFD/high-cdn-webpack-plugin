@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
-  },
+  }/* ,
   plugins: [new HtmlWebpackPlugin({
     template: 'public/index.html'
   }), new CdnWebpackPlugin({
@@ -32,5 +32,5 @@ module.exports = {
         },
       ],
       css: ['https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.1/theme-chalk/index.min.css']
-  })]
+  })] */
 };
