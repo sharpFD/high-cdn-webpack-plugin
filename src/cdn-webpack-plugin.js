@@ -43,7 +43,7 @@ class CdnWebpackPlugin {
         compiler.hooks.emit.tap(name, compilation => {
             const resourceNames = Object.keys(compilation.assets)
             let findTemplate = resourceNames.find(item => item === options.template)
-            console.log('=============',findTemplate);
+            
             if(!findTemplate) {
                 console.error(`[${name} error] =>> can not find the template ${options.template} at your dist bundle, please checkout your output file!`)
             } else {
