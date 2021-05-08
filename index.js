@@ -1,3 +1,3 @@
-const HighCdnWebpackPlugin = require('./dist/main.bundle')
+const HighCdnWebpackPlugin = require('./dist/main')
 
 module.exports = HighCdnWebpackPlugin

@@ -1,19 +1,40 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CdnWebpackPlugin = require('./src/cdn-webpack-plugin');
-
+const HighCdnWebpackPlugin = require('./index');
 
 module.exports = {
   mode: 'production',
   devtool: 'none',
-  entry: './src/cdn-webpack-plugin.js',
+  entry: './src/high-cdn-webpack-plugin.js',
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }/* ,
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    globalObject: 'this',
+    libraryTarget: 'umd'
+  },
+  optimization : {
+    minimize: false/* ,
+    splitChunks : {
+    chunks: 'all',
+    cacheGroups: {
+        libs: {
+            name: 'chunk-libs',
+            test: /[\\/]node_modules[\\/]/,
+            priority: 10,
+            chunks: 'initial'
+        },
+        cheerIO: {
+            name: 'chunk-cheerIO',
+            priority: 20,
+            test: /[\\/]node_modules[\\/]_?cheerio(.*)/
+        }
+    }
+} */
+}
+  ,
   plugins: [new HtmlWebpackPlugin({
     template: 'public/index.html'
-  }), new CdnWebpackPlugin({
+  }), new HighCdnWebpackPlugin({
       template: 'index.html',
       js: [
         {
@@ -32,5 +53,5 @@ module.exports = {
         },
       ],
       css: ['https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.1/theme-chalk/index.min.css']
-  })] */
+  })]
 };

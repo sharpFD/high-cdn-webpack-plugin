@@ -1,14 +1,14 @@
 //const {error} = require('console');
 const {createCssElement,createJsElement} = require('./createElement');
 
-const name = 'CdnWebpackPlugin'
+const name = 'HighCdnWebpackPlugin'
 const cheerio = require('cheerio')
 var userOptions = {}
 
-class CdnWebpackPlugin {
+class HighCdnWebpackPlugin {
     constructor(options = {}) {
         this.userOptions = options || {};
-        this.version = CdnWebpackPlugin.version;
+        this.version = HighCdnWebpackPlugin.version;
       }
     apply(compiler) {
         const userOptions = this.userOptions;
@@ -25,20 +25,21 @@ class CdnWebpackPlugin {
             css: []
         };
 
-
-        // add external
         const options = Object.assign(defaultOptions, userOptions);
-        let jsExternals = userOptions.js.map(item=>item.external)
-        let external = {}
 
-        jsExternals.forEach(item => {
-            external = {
-                ...external,
-                ...item
-            }
-        })
+        /* compiler.hooks.compile.tap('MyPlugin', (params) => {
+            // add external
+            let jsExternals = userOptions.js.map(item => item.external)
+            let external = {}
 
-        compiler.options.external = external
+            jsExternals.forEach(item => {
+                external = {
+                    ...external,
+                    ...item
+                }
+            })
+            compiler.options.external = external
+          }); */
 
         compiler.hooks.emit.tap(name, compilation => {
             const resourceNames = Object.keys(compilation.assets)
@@ -68,5 +69,5 @@ class CdnWebpackPlugin {
     }
 }
 
-CdnWebpackPlugin.version = 1
-module.exports = CdnWebpackPlugin;
+HighCdnWebpackPlugin.version = 1
+module.exports = HighCdnWebpackPlugin;

@@ -21,10 +21,6 @@ function createJsElement(external, path, replacementPath) {
         src : path,
         type : 'application/javascript'
     })), replacementPath, externalV)
-    /* return `
-    <script src="${path}"></script>
-    <script>!window[${externalV}] && document.write(unescape('%3Cscript src="${replacementPath}"%3E%3C/script%3E'))</script>
-    ` */
 }
 function appendSuitablePath(pathStr, replacementPath, externalV) {
     let replacementStr = htmlTagObjectToString(createHtmlTagObject('script', {}, `!window.${externalV} && document.write(unescape('%3Cscript src="${replacementPath}"%3E%3C/script%3E'))`))
