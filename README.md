@@ -4,13 +4,13 @@
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
-</div>
 
 [![npm][npm]][npm-url]
 [![license][license]][chat-url]
 [![chat][chat]][chat-url]
 [![size][size]][size-url]
 
+</div>
 
 # 一、插件介绍
 high-cdn-webpack-plugin是Webpack一款插件，用来在index.html引用的CDN服务器宕机后自动替换CDN地址，实现CDN高可用的服务状态，需要配合html-webpack-plugin生成的模板html动态注入。
